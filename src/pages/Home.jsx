@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import TrendingMovie from '../components/api/api';
 import { onHandingError } from 'components/api/error_handling';
-import MovieList from '../components/MovieList/MovieList';
+import MovieList from 'components/MovieList/MovieList';
 import Loader from 'components/Loader/Loader';
 
 const Home = () => {
