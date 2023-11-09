@@ -1,9 +1,11 @@
 import React from "react";
 
-export const App = () => {
+const Movies = () => {
     return (
       <>
     
       </>
     );
   };
+
+export default Movies;

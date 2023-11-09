@@ -4,9 +4,9 @@ import { paramsNotify } from './error_handling';
 
 const BASE_URL = 'https://api.themoviedb.org/3/';
 const API_KEY = '715f5dfcd0365ce887a7dfc6240d5986';
-export const IMAGE_URL = 'https://image.tmdb.org/t/p/w400/';
+export const IMAGE_URL = 'https://image.tmdb.org/t/p/w500';
 
-export const TrendingMovie = async () => {
+const TrendingMovie = async () => {
     try {
       const { data } = await axios.get(`${BASE_URL}trending/movie/day?api_key=${API_KEY}`);
       return data.results;
@@ -14,6 +14,8 @@ export const TrendingMovie = async () => {
      Notify.failure('Oops! Something went wrong!',paramsNotify);
     }
   };
+
+  export default TrendingMovie;
 
   export const GetGenre = async () => {
     try {
