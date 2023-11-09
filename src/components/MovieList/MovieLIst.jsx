@@ -9,7 +9,7 @@ import {
   GalleryItemImg,
 } from './Movie.style';
 
-const MoviesGallery = ({ movies }) => {
+const MovieList = ({ movies }) => {
   const location = useLocation();
   return (
     <GalleryCard>
@@ -35,4 +35,4 @@ const MoviesGallery = ({ movies }) => {
   );
 };
 
-export default MoviesGallery;
+export default MovieList;
