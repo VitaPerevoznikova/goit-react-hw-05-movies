@@ -18,7 +18,7 @@ const Home = () => {
       .then(setMovies)
       .catch(onHandingError)
       .finally(() => setLoading(false));
-      
+        // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
