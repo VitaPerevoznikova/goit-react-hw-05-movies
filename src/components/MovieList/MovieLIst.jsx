@@ -7,7 +7,7 @@ import {
   GalleryDescription,
   GalleryItem,
   GalleryItemImg,
-} from './Movie.style';
+} from './MovieList.style';
 
 const MovieList = ({ movies }) => {
   const location = useLocation();
