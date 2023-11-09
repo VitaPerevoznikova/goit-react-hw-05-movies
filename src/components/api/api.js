@@ -1,12 +1,6 @@
 import axios from 'axios';
 import { Notify } from 'notiflix';
-
-export const paramsNotify = {
-    position: 'center-center',
-    timeout: 3000,
-    width: '400px',
-    fontSize: '24px',
-  };
+import { paramsNotify } from './error_handling';
 
 const BASE_URL = 'https://api.themoviedb.org/3/';
 const API_KEY = '715f5dfcd0365ce887a7dfc6240d5986';

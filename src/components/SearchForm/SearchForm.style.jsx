@@ -1,4 +1,4 @@
-import styled from 'react-loader-spinner/dist/type';
+import styled from 'styled-components';
 
 export const Header = styled.header`
   top: 0;
@@ -27,6 +27,14 @@ export const Header = styled.header`
     background-color: #fff;
     border-radius: 3px;
     overflow: hidden;
+  }
+  input{
+    margin-left: 10px;
+    border: none;
+    overflow: hidden;
+  }
+  input:focus {
+    outline: none;
   }
 `;
 export const SearchFormButton = styled.button`

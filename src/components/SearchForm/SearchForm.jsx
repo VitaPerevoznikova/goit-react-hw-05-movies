@@ -1,8 +1,10 @@
 import { BiSearchAlt  } from "react-icons/bi";
 import React, {useState} from 'react';
+
 import { Header, SearchFormButton } from "./SearchForm.style";
+
 import { Notify } from "notiflix";
-import { paramsNotify } from "components/api/api";
+//import { paramsNotify } from "components/api/api";
 
 const SearchForm = ({onSubmit}) => {
     const [searchQuery, setSearchQuery] = useState('');
@@ -17,11 +19,13 @@ const SearchForm = ({onSubmit}) => {
         event.preventDefault();
 
         if (searchQuery.trim() === '') {
-            Notify.failure('Enter your request, please!',paramsNotify);  
+            Notify.failure('Enter your request, please!',
+            //paramsNotify
+            );  
             return;
         }
         // history.push({ ...location, search: `query=${searchQuery}` });
-        onSubmit(searchQuery);
+         onSubmit(searchQuery);
     }
       return (
         <Header>
