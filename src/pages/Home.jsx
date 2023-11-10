@@ -3,7 +3,7 @@ import TrendingMovie from '../components/api/api';
 import { onHandingError } from 'components/api/error_handling';
 
 import Loader from 'components/Loader/Loader';
-import MovieList from 'components/MovieList/MovieList';
+import MovieList from 'components/MovieLists/MovieList';
 
 
 
