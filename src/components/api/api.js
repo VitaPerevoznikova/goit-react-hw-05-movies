@@ -4,7 +4,9 @@ import { paramsNotify } from './error_handling';
 
 const BASE_URL = 'https://api.themoviedb.org/3/';
 const API_KEY = '715f5dfcd0365ce887a7dfc6240d5986';
+
 export const IMAGE_URL = 'https://image.tmdb.org/t/p/w500';
+export const PLACEHOLDER = 'https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg';
 
 const TrendingMovie = async () => {
     try {
@@ -37,10 +39,10 @@ const TrendingMovie = async () => {
     }
   };
 
-  export const GetMovieBySearch = async q => {
+  export const GetMovieBySearch = async query => {
     try {
       const { data } = await axios.get(
-        `${BASE_URL}search/movie?api_key=${API_KEY}&query=${q}&include_adult=false`
+        `${BASE_URL}search/movie?api_key=${API_KEY}&query=${query}&include_adult=false`
       );
   
       return data.results;

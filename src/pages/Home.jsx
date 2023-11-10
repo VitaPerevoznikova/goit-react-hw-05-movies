@@ -5,7 +5,7 @@ import { onHandingError } from 'components/api/error_handling';
 import Loader from 'components/Loader/Loader';
 import MovieList from 'components/MovieList/MovieList';
 
-const Home = () => {
+export const Home = () => {
   const [loading, setLoading] = useState(true);
   const [movies, setMovies] = useState([]);
 
@@ -18,7 +18,6 @@ const Home = () => {
       .then(setMovies)
       .catch(onHandingError)
       .finally(() => setLoading(false));
-        // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

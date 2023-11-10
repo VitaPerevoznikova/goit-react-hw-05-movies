@@ -4,7 +4,7 @@ import React, {useState} from 'react';
 import { Header, SearchFormButton } from "./SearchForm.style";
 
 import { Notify } from "notiflix";
-//import { paramsNotify } from "components/api/api";
+// import { paramsNotify } from "components/api/api";
 
 const SearchForm = ({onSubmit}) => {
     const [searchQuery, setSearchQuery] = useState('');
@@ -18,14 +18,15 @@ const SearchForm = ({onSubmit}) => {
     const handleSubmit = event => {
         event.preventDefault();
 
-        if (searchQuery.trim() === '') {
+        if (searchQuery.trim()  === '') {
             Notify.failure('Enter your request, please!',
             //paramsNotify
             );  
             return;
         }
         // history.push({ ...location, search: `query=${searchQuery}` });
-         onSubmit(searchQuery);
+  
+        onSubmit({ query: searchQuery });
     }
       return (
         <Header>

@@ -1,13 +1,14 @@
 import React from 'react';
 import { useLocation, Link } from 'react-router-dom';
 
-import { IMAGE_URL } from 'components/api/api';
+import { IMAGE_URL, PLACEHOLDER } from 'components/api/api';
 import {
   GalleryCard,
   GalleryDescription,
   GalleryItem,
   GalleryItemImg,
 } from './MovieList.style';
+// import Loader from 'components/Loader/Loader';
 
 const MovieList = ({ movies }) => {
   const location = useLocation();
@@ -22,7 +23,9 @@ const MovieList = ({ movies }) => {
             }}
           >
             <GalleryItemImg
-              src={IMAGE_URL + movie.poster_path}
+              // src={IMAGE_URL + movie.poster_path}
+              src={movie.poster_path ? IMAGE_URL + movie.poster_path : PLACEHOLDER}
+
               alt={movie.title}
               width={400}
             />

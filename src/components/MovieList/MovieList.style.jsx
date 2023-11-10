@@ -12,9 +12,10 @@ export const GalleryCard = styled.ul`
   margin-right: auto;
 `;
 export const GalleryItem = styled.li`
+  height: auto;
   border-radius: 2px;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
-  0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 
   :hover {
@@ -23,6 +24,10 @@ export const GalleryItem = styled.li`
   }
 `;
 export const GalleryItemImg = styled.img`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
   width: 100%;
   object-fit: cover;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -30,7 +35,7 @@ export const GalleryItemImg = styled.img`
 `;
 
 export const GalleryDescription = styled.p`
-    text-align: center;
-    color: black;
-    font-size: 20px;
-`
+  text-align: center;
+  color: black;
+  font-size: 20px;
+`;
