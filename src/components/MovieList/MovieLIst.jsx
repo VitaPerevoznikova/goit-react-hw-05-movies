@@ -9,7 +9,7 @@ import {
   GalleryItemImg,
 } from './MovieList.style';
 
-const MovieList = ({ movies }) => {
+export const MovieList = ({ movies }) => {
   const location = useLocation();
   return (
     <GalleryCard>
@@ -22,7 +22,6 @@ const MovieList = ({ movies }) => {
             }}
           >
             <GalleryItemImg
-              // src={IMAGE_URL + movie.poster_path}
               src={movie.poster_path ? IMAGE_URL + movie.poster_path : PLACEHOLDER}
 
               alt={movie.title}
