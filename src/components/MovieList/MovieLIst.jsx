@@ -8,7 +8,6 @@ import {
   GalleryItem,
   GalleryItemImg,
 } from './MovieList.style';
-// import Loader from 'components/Loader/Loader';
 
 const MovieList = ({ movies }) => {
   const location = useLocation();

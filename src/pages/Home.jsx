@@ -5,14 +5,12 @@ import { onHandingError } from 'components/api/error_handling';
 import Loader from 'components/Loader/Loader';
 import MovieList from 'components/MovieList/MovieList';
 
+
 export const Home = () => {
   const [loading, setLoading] = useState(true);
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    // if (movies.length > 0) {
-    //   return;
-    // }
 
     TrendingMovie('')
       .then(setMovies)
