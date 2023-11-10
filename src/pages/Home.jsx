@@ -10,9 +10,9 @@ const Home = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    if (movies.length > 0) {
-      return;
-    }
+    // if (movies.length > 0) {
+    //   return;
+    // }
 
     TrendingMovie('')
       .then(setMovies)
