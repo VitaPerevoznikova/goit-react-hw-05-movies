@@ -1,6 +1,6 @@
 
 
-import MovieList from 'components/MovieGallery/MovieList';
+import MovieList from 'components/MovieList/MovieList';
 import SearchForm from 'components/SearchForm/SearchForm';
 import { GetMovieBySearch } from 'components/api/api';
 import { onHandingError } from 'components/api/error_handling';
