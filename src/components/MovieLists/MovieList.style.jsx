@@ -12,8 +12,7 @@ export const GalleryCard = styled.ul`
   margin-right: auto;
 `;
 export const GalleryItem = styled.li`
-  height: auto;
-  border-radius: 2px;
+  border-radius: 6px;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -36,6 +35,6 @@ export const GalleryItemImg = styled.img`
 
 export const GalleryDescription = styled.p`
   text-align: center;
-  color: black;
-  font-size: 20px;
+  color: var(--wite);
+  font-size: 24px;
 `;

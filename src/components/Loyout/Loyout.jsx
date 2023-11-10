@@ -1,31 +1,31 @@
-
 import { Suspense } from 'react';
-import { Outlet,NavLink   } from 'react-router-dom';
-
+import { Outlet } from 'react-router-dom';
+import {
+  Container,
+  StyledHeader,
+  StyledItem,
+  StyledList,
+  StyledNavLink,
+} from './Layout.style';
 
 const Layout = () => {
   return (
-    <div>
-      <header>
-        <nav>
-          <ul>
-            <li>
-              <NavLink to="/">
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/movies">
-                Movies
-              </NavLink>
-            </li>
-          </ul>
-        </nav>
-      </header>
+    <Container>
+      <StyledHeader> 
+        <StyledList>
+          <StyledItem>
+            <StyledNavLink to="/">Home</StyledNavLink>
+          </StyledItem>
+          <StyledItem>
+            <StyledNavLink to="/movies">Movies</StyledNavLink>
+          </StyledItem>
+        </StyledList>
+      </StyledHeader>
+
       <Suspense fallback={<div>Loading page...</div>}>
         <Outlet />
       </Suspense>
-   </div> 
+    </Container>
   );
 };
 

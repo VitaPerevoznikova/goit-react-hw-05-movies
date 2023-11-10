@@ -22,13 +22,13 @@ export const MovieList = ({ movies }) => {
             }}
           >
             <GalleryItemImg
-              src={movie.poster_path ? IMAGE_URL + movie.poster_path : PLACEHOLDER}
-
+              src={
+                movie.poster_path ? IMAGE_URL + movie.poster_path : PLACEHOLDER
+              }
               alt={movie.title}
               width={400}
             />
-            <GalleryDescription>{movie.title}</GalleryDescription>
-            <GalleryDescription>{movie.vote_average}</GalleryDescription>
+            <GalleryDescription>{movie.original_title}</GalleryDescription>
           </Link>
         </GalleryItem>
       ))}

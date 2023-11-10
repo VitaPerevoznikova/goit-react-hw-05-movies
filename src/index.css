@@ -43,3 +43,10 @@ a {
 a:active {
   color: orange;
 }
+:root{
+  --dark: #0D0C11;
+  --orange:#E50914;
+  --wite:#fff;
+  --grey:#17161B;
+
+}
