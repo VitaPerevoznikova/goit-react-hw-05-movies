@@ -13,6 +13,7 @@ import {
 export const MovieList = ({ movies }) => {
   const location = useLocation();
   return (
+    
     <GalleryCard>
       {movies.map(movie => (
         <GalleryItem key={movie.id}>
@@ -36,6 +37,7 @@ export const MovieList = ({ movies }) => {
         </GalleryItem>
       ))}
     </GalleryCard>
+   
   );
 };
 

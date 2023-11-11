@@ -1,5 +1,3 @@
-
-
 import MovieList from 'components/MovieLists/MovieList';
 import SearchForm from 'components/SearchForm/SearchForm';
 import { GetMovieBySearch } from 'components/api/api';
@@ -28,7 +26,6 @@ const Movies = () => {
 
   return (
     <>
-     
       <SearchForm onSubmit={setSearchParams} />
       {movies.length > 0 && <MovieList movies={movies} />}
     </>

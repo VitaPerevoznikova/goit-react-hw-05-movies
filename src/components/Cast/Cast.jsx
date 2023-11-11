@@ -3,6 +3,8 @@ import { GetMovieCast, IMAGE_URL, PLACEHOLDER } from 'components/api/api';
 import { onHandingError } from 'components/api/error_handling';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { CastDescription, CastImg, CastTitle, CastTitleContainer, ListItem, StyledList } from './Cast.style';
+
 
 const Cast = () => {
   const { movieId } = useParams();
@@ -28,41 +30,35 @@ const Cast = () => {
   }, [movieId]);
 
   return (
-    <div>
+    <>
       {loading && <Loader />}
       {cast && cast.length > 0 ? (
-        <ul>
+        <StyledList>
           {cast.map(({ id, profile_path, original_name, character }) => (
-            <li key={id}>
-              {/* <img
-                src={`${
-                  profile_path
-                    ? IMAGE_URL + profile_path
-                    : PLACEHOLDER + original_name
-                }`}
-                width="100"
-                height="150"
+            <ListItem key={id}>
+              <CastImg
+                src={profile_path ? `${IMAGE_URL}${profile_path}` : PLACEHOLDER}
                 alt={original_name}
-              /> */}
-<img src={profile_path ?
-                        `${IMAGE_URL}${profile_path}` :
-                        PLACEHOLDER}
-                        alt={original_name} width="100" height="150" />
-              <p>
-                <span>Actor:</span>
+                width="182"
+                height="150"
+              />
+              <CastTitleContainer>
+              <CastDescription>
+                <CastTitle>Actor:</CastTitle>
                 {original_name}
-              </p>
-              <p>
-                <span>Character:</span>
+              </CastDescription>
+              <CastDescription>
+                <CastTitle>Character:</CastTitle>
                 {character}
-              </p>
-            </li>
+              </CastDescription>
+              </CastTitleContainer>
+            </ListItem>
           ))}
-        </ul>
+        </StyledList>
       ) : (
         <p>Sorry! We don't have any informtion about cast</p>
       )}
-    </div>
+    </>
   );
 };
 

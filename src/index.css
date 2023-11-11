@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--dark);
+  
 }
 
 code {
@@ -40,9 +42,6 @@ a {
   color: #212121;
 }
 
-a:active {
-  color: orange;
-}
 :root{
   --dark: #0D0C11;
   --orange:#E50914;

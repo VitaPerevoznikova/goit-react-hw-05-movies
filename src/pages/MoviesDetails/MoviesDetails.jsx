@@ -1,6 +1,5 @@
 import { Suspense, useEffect, useState } from 'react';
 import {
-  NavLink,
   Outlet,
   useLocation,
   useParams,
@@ -8,6 +7,8 @@ import {
 
 import {GetMovieById, IMAGE_URL, PLACEHOLDER } from 'components/api/api';
 import { onHandingError } from 'components/api/error_handling';
+import { BackBtn, DetailsList, FilmDescription, FilmImg, FilmSubTitle, FilmTitle, FilmWrapper, NavLinks, StyledListDescr, TitleDetails } from './MoviesDetails.style';
+
 
 const MoviesDetails = () => {
   const { movieId } = useParams();
@@ -26,49 +27,49 @@ const MoviesDetails = () => {
     fetchMovieById();
   }, [movieId]);
 
-//   const backLinkHref = location.state?.from ?? '/movies';
-//   <span>
-//   <Link to={backLinkHref}>
-//     Go back
-//   </Link>
-// </span>
+  const backLinkHref = location.state?.from ?? '/';
+  
 
   return (
     <>
-      <div>
-        <img
+    <span>
+  <BackBtn to={backLinkHref}>
+    Go back
+  </BackBtn>
+</span>
+      <FilmWrapper>
+        <FilmImg
           src={movie.poster_path ? IMAGE_URL + movie.poster_path : PLACEHOLDER}
           width={200}
           height={300}
           alt="original_title"
         />
         <div>
-          <h2>{movie.original_title}</h2>
-          <p>Rating: {Math.round(movie.vote_average)}</p>
-          <p>Overview</p>
-          <p>{movie.overview}</p>
-          <p>Genres</p>
-          <ul>
+          <FilmTitle>{movie.original_title}</FilmTitle>
+          <FilmSubTitle>Rating: {Math.round(movie.vote_average)}</FilmSubTitle>
+          <FilmSubTitle>Overview</FilmSubTitle>
+          <FilmDescription>{movie.overview}</FilmDescription>
+          <StyledListDescr>
             {movie.genres?.map(genre => (
               <li key={genre.id}>{genre.name}</li>
             ))}
-          </ul>
+          </StyledListDescr>
         </div>
-      </div>
+      </FilmWrapper>
       <div>
-        <h2>Additional information</h2>
-        <ul>
+        <TitleDetails>Additional information</TitleDetails>
+        <DetailsList>
           <li>
-            <NavLink to="cast" state={location.state}>
+            <NavLinks to="cast" state={location.state}>
               Cast
-            </NavLink>
+            </NavLinks>
           </li>
           <li>
-            <NavLink to="reviews" state={location.state}>
+            <NavLinks to="reviews" state={location.state}>
               Reviews
-            </NavLink>
+            </NavLinks>
           </li>
-        </ul>
+        </DetailsList>
         <Suspense fallback={<div>Loading subpage...</div>}>
           <Outlet />
         </Suspense>
