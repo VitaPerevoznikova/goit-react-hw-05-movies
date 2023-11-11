@@ -3,6 +3,7 @@ import { useLocation, Link } from 'react-router-dom';
 
 import { IMAGE_URL, PLACEHOLDER } from 'components/api/api';
 import {
+  DescriptionContainer,
   GalleryCard,
   GalleryDescription,
   GalleryItem,
@@ -28,7 +29,9 @@ export const MovieList = ({ movies }) => {
               alt={movie.title}
               width={400}
             />
+            <DescriptionContainer>
             <GalleryDescription>{movie.original_title}</GalleryDescription>
+            </DescriptionContainer>
           </Link>
         </GalleryItem>
       ))}

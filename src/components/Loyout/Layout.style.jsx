@@ -3,12 +3,12 @@ import { NavLink } from 'react-router-dom';
 
 export const Container = styled.div`
 padding: 25px;
-background-color: var(--dark);
+// background-color: var(--dark);
 `;
 export const StyledHeader = styled.header`
 width:100%;
 `
-export const StyledList = styled.header`
+export const StyledList = styled.ul`
   display: flex;
   gap: 50px;
   align-items: baseline;

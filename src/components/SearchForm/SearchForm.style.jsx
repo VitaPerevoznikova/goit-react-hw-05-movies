@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Header = styled.header`
+export const FormContainer = styled.div`
   top: 0;
   left: 0;
   position: sticky;
@@ -15,11 +15,24 @@ export const Header = styled.header`
   padding-bottom: 12px;
   margin-bottom: 15px;
   color: #fff;
-  background-color: #587feb;
+  
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
     0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 
-  form {
+`;
+
+export const InputStyle = styled.input`
+
+  margin-left: 10px;
+  border: none;
+  overflow: hidden;
+
+:focus {
+  outline: none;
+}
+`;
+
+export const FormStyle = styled.form`
     display: flex;
     align-items: center;
     width: 100%;
@@ -27,15 +40,6 @@ export const Header = styled.header`
     background-color: #fff;
     border-radius: 3px;
     overflow: hidden;
-  }
-  input{
-    margin-left: 10px;
-    border: none;
-    overflow: hidden;
-  }
-  input:focus {
-    outline: none;
-  }
 `;
 export const SearchFormButton = styled.button`
   display: inline-block;

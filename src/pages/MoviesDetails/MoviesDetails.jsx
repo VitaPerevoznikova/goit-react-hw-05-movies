@@ -1,6 +1,5 @@
 import { Suspense, useEffect, useState } from 'react';
 import {
-  Link,
   NavLink,
   Outlet,
   useLocation,
@@ -15,7 +14,6 @@ const MoviesDetails = () => {
   const [movie, setMovie] = useState('');
   const location = useLocation();
 
-  const backLinkHref = location.state?.from ?? '/movies';
   useEffect(() => {
     const fetchMovieById = async () => {
       try {
@@ -28,17 +26,21 @@ const MoviesDetails = () => {
     fetchMovieById();
   }, [movieId]);
 
+//   const backLinkHref = location.state?.from ?? '/movies';
+//   <span>
+//   <Link to={backLinkHref}>
+//     Go back
+//   </Link>
+// </span>
+
   return (
     <>
-      <span>
-        <Link to={backLinkHref}>
-          Go back
-        </Link>
-      </span>
       <div>
         <img
           src={movie.poster_path ? IMAGE_URL + movie.poster_path : PLACEHOLDER}
-          alt="get"
+          width={200}
+          height={300}
+          alt="original_title"
         />
         <div>
           <h2>{movie.original_title}</h2>

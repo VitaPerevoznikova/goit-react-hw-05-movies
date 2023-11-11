@@ -14,7 +14,7 @@ export const GalleryCard = styled.ul`
 export const GalleryItem = styled.li`
   border-radius: 6px;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+  0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 
   :hover {
@@ -32,7 +32,10 @@ export const GalleryItemImg = styled.img`
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 `;
-
+export const DescriptionContainer = styled.div`
+padding:15px 0;
+background-color: var(--grey);
+`;
 export const GalleryDescription = styled.p`
   text-align: center;
   color: var(--wite);

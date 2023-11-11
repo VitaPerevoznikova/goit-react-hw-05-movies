@@ -1,7 +1,7 @@
 import { BiSearchAlt  } from "react-icons/bi";
 import React, {useState} from 'react';
 
-import { Header, SearchFormButton } from "./SearchForm.style";
+import {  FormContainer, FormStyle, InputStyle, SearchFormButton } from "./SearchForm.style";
 
 import { Notify } from "notiflix";
 // import { paramsNotify } from "components/api/api";
@@ -29,13 +29,12 @@ const SearchForm = ({onSubmit}) => {
         onSubmit({ query: searchQuery });
     }
       return (
-        <Header>
-          <form onSubmit={handleSubmit} className="SearchForm">
-            <SearchFormButton type="submit" className="SearchForm-button">
-            
+        <FormContainer>
+          <FormStyle onSubmit={handleSubmit} >
+            <SearchFormButton type="submit">
               <BiSearchAlt style={{ width: 25, height: 25 }} />
             </SearchFormButton>
-            <input
+            <InputStyle
                type="text"
                autoComplete="off"
                autoFocus
@@ -43,8 +42,9 @@ const SearchForm = ({onSubmit}) => {
                value={searchQuery}
                onChange={handleChange}
             />
-          </form>
-        </Header>
+             
+          </FormStyle>
+        </FormContainer>
       );
     }
   export default SearchForm;
