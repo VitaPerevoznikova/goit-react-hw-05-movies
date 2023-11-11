@@ -30,6 +30,7 @@ const MoviesDetails = () => {
   const location = useLocation();
   const backLinkHref = location.state?.from ?? '/';
 
+  const getYear = () => new Date(movie.release_date).getFullYear();
   return (
     <>
     <span>
@@ -46,7 +47,8 @@ const MoviesDetails = () => {
         />
         <div>
           <FilmTitle>{movie.original_title}</FilmTitle>
-          <FilmSubTitle>Rating: {Math.round(movie.vote_average)}</FilmSubTitle>
+          <FilmDescription>({getYear()})</FilmDescription>
+          <FilmSubTitle>Rating: {Math.round(movie.vote_average * 100) / 100}</FilmSubTitle>
           <FilmSubTitle>Overview</FilmSubTitle>
           <FilmDescription>{movie.overview}</FilmDescription>
           <StyledListDescr>
