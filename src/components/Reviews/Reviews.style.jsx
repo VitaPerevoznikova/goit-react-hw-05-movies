@@ -18,6 +18,6 @@ export const ReviewsItem = styled.li`
   }
 `;
 export const ReviewsDescr = styled.p`
-  color: #888888;
+  color: var(--wite);
   margin-top: 6px;
 `;

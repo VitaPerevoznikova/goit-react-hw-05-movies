@@ -2,8 +2,11 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const Container = styled.div`
-padding: 30px;
-// background-color: var(--dark);
+max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
 `;
 export const StyledHeader = styled.header`
 width:100%;

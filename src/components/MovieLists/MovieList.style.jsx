@@ -5,12 +5,9 @@ export const GalleryCard = styled.ul`
   max-width: calc(100vw - 48px);
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   grid-gap: 16px;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding: 0;
-  margin-left: auto;
-  margin-right: auto;
+  
 `;
+
 export const GalleryItem = styled.li`
   border-radius: 6px;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
@@ -22,20 +19,22 @@ export const GalleryItem = styled.li`
     cursor: zoom-in;
   }
 `;
+
 export const GalleryItemImg = styled.img`
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh; 
+  align-items: center; 
   width: 100%;
   object-fit: cover;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 `;
+
 export const DescriptionContainer = styled.div`
 padding:15px 0;
 background-color: var(--grey);
 `;
+
 export const GalleryDescription = styled.p`
   text-align: center;
   color: var(--wite);

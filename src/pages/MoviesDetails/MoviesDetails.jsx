@@ -13,7 +13,7 @@ import { BackBtn, DetailsList, FilmDescription, FilmImg, FilmSubTitle, FilmTitle
 const MoviesDetails = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState('');
-  const location = useLocation();
+  
 
   useEffect(() => {
     const fetchMovieById = async () => {
@@ -27,8 +27,8 @@ const MoviesDetails = () => {
     fetchMovieById();
   }, [movieId]);
 
+  const location = useLocation();
   const backLinkHref = location.state?.from ?? '/';
-  
 
   return (
     <>

@@ -20,7 +20,7 @@ const Reviews = () => {
     }, [movieId]);
   
     return reviews.length === 0 ? (
-      <h3>No Reviews.</h3>
+      <ReviewsDescr>No Reviews.</ReviewsDescr>
     ) : (
       <ReviewsList>
         {reviews.map(({ id, author, content }) => (
