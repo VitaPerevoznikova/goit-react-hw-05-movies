@@ -9,20 +9,20 @@ import Cast from './Cast/Cast';
 
 export const App = () => {
   return (
-    <>
+    <Layout>
       <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
+      {/* <Route path="/" element={<Layout />}> */}
+        <Route path="/" element={<Home />} />
         <Route path="movies" element={<Movies />} />
-        
+
         <Route path="movies/:movieId" element={<MoviesDetails />}>
           <Route path="cast" element={<Cast />} />
           <Route path="reviews" element={<Reviews />} />
         </Route>
-        
+
         <Route path="*" element={<Home/>} />
-      </Route>
+      {/* </Route> */}
     </Routes>
-    </>
+    </Layout>
   );
 };

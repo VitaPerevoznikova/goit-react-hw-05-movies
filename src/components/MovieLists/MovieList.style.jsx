@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const GalleryCard = styled.ul`
+  padding-bottom:50px;
   display: grid;
   max-width: calc(100vw - 48px);
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
