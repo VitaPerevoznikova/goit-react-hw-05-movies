@@ -7,6 +7,7 @@ import {
   StyledList,
   StyledNavLink,
 } from './Layout.style';
+import Loader from 'components/Loader/Loader';
 // import Footer from 'components/Footer/Footer';
 
 
@@ -24,15 +25,16 @@ const Layout = ({children}) => {
         </StyledList>
       </StyledHeader>
        <main>
+        <Suspense fallback={<Loader/>}>
+        <Outlet />
+      </Suspense>
         {children}
        </main>
        {/* <footer>
          <Footer/>
        </footer> */}
       
-      <Suspense fallback={<div>Loading page...</div>}>
-        <Outlet />
-      </Suspense>
+      
     </Container>
   );
 };

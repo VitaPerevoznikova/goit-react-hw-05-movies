@@ -3,6 +3,7 @@ import { Outlet, useLocation, useParams } from 'react-router-dom';
 import Loader from 'components/Loader/Loader';
 import { GetMovieById, IMAGE_URL, PLACEHOLDER } from 'components/api/api';
 import { onHandingError } from 'components/api/error_handling';
+
 import {
   BackBtnLink,
   DetailsList,
@@ -85,7 +86,7 @@ const MoviesDetails = () => {
             </NavLinks>
           </li>
         </DetailsList>
-        <Suspense fallback={<div>Loading page...</div>}>
+          <Suspense fallback={<Loader/>}>
           <Outlet />
         </Suspense>
       </div>

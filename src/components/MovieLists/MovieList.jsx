@@ -1,4 +1,3 @@
-import React from 'react';
 import { useLocation, Link } from 'react-router-dom';
 
 import { IMAGE_URL, PLACEHOLDER } from 'components/api/api';
@@ -8,6 +7,7 @@ import {
   GalleryDescription,
   GalleryItem,
   GalleryItemImg,
+  GalleryTitle,
 } from './MovieList.style';
 
 export const MovieList = ({ movies }) => {
@@ -28,10 +28,12 @@ export const MovieList = ({ movies }) => {
               alt={movie.title}
               width={400}
             />
+
             <DescriptionContainer>
-              <GalleryDescription>{movie.original_title}</GalleryDescription>
+              <GalleryTitle>{movie.original_title}</GalleryTitle>
+              <GalleryDescription>{movie.overview}</GalleryDescription>
             </DescriptionContainer>
-          </GalleryItem>{' '}
+          </GalleryItem>
         </Link>
       ))}
     </GalleryCard>

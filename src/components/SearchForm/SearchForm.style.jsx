@@ -121,7 +121,6 @@ width: 100%;
     color: var(--wite);
     outline: none;
     box-shadow: 0 0 5px var(--orange); 
-    // border-color: var(--orange);
   }
 `;
 
