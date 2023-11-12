@@ -3,7 +3,8 @@ import styled from 'styled-components';
 export const StyledList = styled.ul`
   display: flex;
   gap: 15px;
-  justify-content: start;
+  // justify-content: start;
+  justify-content: space-around;
   flex-wrap: wrap;
   padding-top: 20px;
 `;

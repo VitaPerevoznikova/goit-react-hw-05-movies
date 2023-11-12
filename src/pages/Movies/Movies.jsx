@@ -2,6 +2,7 @@ import MovieList from 'components/MovieLists/MovieList';
 import SearchForm from 'components/SearchForm/SearchForm';
 import { GetMovieBySearch } from 'components/api/api';
 import { onHandingError } from 'components/api/error_handling';
+import { Notify } from 'notiflix';
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
@@ -9,8 +10,10 @@ const Movies = () => {
   const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
 
+  const currentQuery = searchParams.get('query');
+
   useEffect(() => {
-    const currentQuery = searchParams.get('query');
+    
     if (!currentQuery) return;
 
     const fetchMovieByQuery = async () => {
@@ -22,11 +25,30 @@ const Movies = () => {
       }
     };
     fetchMovieByQuery();
-  }, [searchParams]);
+  }, [currentQuery]);
+
+  const onSubmitForm = value => {
+    const searchValue = value.trim().toLowerCase().split(' ').join('+');
+
+    if (searchValue === '') {
+      setSearchParams({});
+      setMovies([]);
+      Notify.info('Enter your request, please!');
+      return;
+    }
+
+    if (searchValue === currentQuery) {
+      Notify.info('Enter new request, please!');
+      return;
+    }
+    setSearchParams({ query: searchValue });
+    setMovies([]);
+  };
+
 
   return (
     <>
-      <SearchForm onSubmit={setSearchParams} />
+      <SearchForm onSubmitForm={onSubmitForm} />
       {movies.length > 0 && <MovieList movies={movies} />}
     </>
   );
