@@ -12,7 +12,7 @@ const Footer = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-       Created by Vita Perevoznikova
+       <p>Created by Vita Perevoznikova</p>
       </Link>
       <span className='FooterDate'>
       {new Date().getFullYear()}

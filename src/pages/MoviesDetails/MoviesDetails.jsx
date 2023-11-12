@@ -1,10 +1,10 @@
-import { Suspense, useEffect, useState } from 'react';
+import { Suspense, useEffect, useRef, useState } from 'react';
 import { Outlet, useLocation, useParams } from 'react-router-dom';
-
+import Loader from 'components/Loader/Loader';
 import { GetMovieById, IMAGE_URL, PLACEHOLDER } from 'components/api/api';
 import { onHandingError } from 'components/api/error_handling';
 import {
-  BackBtn,
+  BackBtnLink,
   DetailsList,
   FilmDescription,
   FilmImg,
@@ -15,7 +15,6 @@ import {
   StyledListDescr,
   TitleDetails,
 } from './MoviesDetails.style';
-import Loader from 'components/Loader/Loader';
 
 const MoviesDetails = () => {
   const { movieId } = useParams();
@@ -23,7 +22,7 @@ const MoviesDetails = () => {
   const [loader, setLoader] = useState(false);
 
   const location = useLocation();
-  const backLinkHref = location.state?.from ?? '/';
+  const backLinkHref = useRef(location.state?.from ?? '/');
 
   useEffect(() => {
     const fetchMovieById = async () => {
@@ -48,7 +47,7 @@ const MoviesDetails = () => {
   return (
     <>
       <span>
-        <BackBtn to={backLinkHref}>Go back</BackBtn>
+        <BackBtnLink to={backLinkHref.current}>Go back</BackBtnLink>
       </span>
       <FilmWrapper>
         <FilmImg

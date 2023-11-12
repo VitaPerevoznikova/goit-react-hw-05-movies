@@ -2,12 +2,23 @@ import styled from 'styled-components';
 
 export const FooterStyled = styled.footer`
   background-color: var(--grey);
-  padding: 50px 0;
   text-align: center; 
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 44px;
+  
+  padding-top: 12px;
+  padding-bottom: 12px;
+  color: #fff;
+ 
+ 
 
   .FooterDescription {
     color: var(--wite);
-    margin-right: 10px;
     font-size: 16px; 
     :hover,
     :focus{

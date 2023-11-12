@@ -27,13 +27,18 @@ export const GalleryItemImg = styled.img`
   align-items: center; 
   width: 100%;
   object-fit: cover;
+  height: 100%;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 `;
 
 export const DescriptionContainer = styled.div`
-padding:15px 0;
+padding: 15px 0;
 background-color: var(--grey);
+display: grid;
+place-items: center;
+height: 100%;
+min-height: 70px;
 `;
 
 export const GalleryDescription = styled.p`

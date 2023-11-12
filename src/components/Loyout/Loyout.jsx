@@ -7,7 +7,7 @@ import {
   StyledList,
   StyledNavLink,
 } from './Layout.style';
-import Footer from 'components/Footer/Footer';
+// import Footer from 'components/Footer/Footer';
 
 
 const Layout = ({children}) => {
@@ -26,9 +26,9 @@ const Layout = ({children}) => {
        <main>
         {children}
        </main>
-       <footer>
+       {/* <footer>
          <Footer/>
-       </footer>
+       </footer> */}
       
       <Suspense fallback={<div>Loading page...</div>}>
         <Outlet />

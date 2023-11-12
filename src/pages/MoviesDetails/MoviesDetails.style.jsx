@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link, NavLink } from 'react-router-dom';
 
-export const BackBtn = styled(Link)`
+export const BackBtnLink = styled(Link)`
   display: inline-block;
 
   padding: 10px 30px;

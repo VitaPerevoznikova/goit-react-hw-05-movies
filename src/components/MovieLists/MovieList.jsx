@@ -13,16 +13,14 @@ import {
 export const MovieList = ({ movies }) => {
   const location = useLocation();
   return (
-    
     <GalleryCard>
       {movies.map(movie => (
-        <GalleryItem key={movie.id}>
-          <Link
-            to={{
-              pathname: `/movies/${movie.id}`,
-              state: { from: location },
-            }}
-          >
+        <Link
+          key={movie.id}
+          to={`/movies/${movie.id}`}
+          state={{ from: location }}
+        >
+          <GalleryItem>
             <GalleryItemImg
               src={
                 movie.poster_path ? IMAGE_URL + movie.poster_path : PLACEHOLDER
@@ -31,13 +29,12 @@ export const MovieList = ({ movies }) => {
               width={400}
             />
             <DescriptionContainer>
-            <GalleryDescription>{movie.original_title}</GalleryDescription>
+              <GalleryDescription>{movie.original_title}</GalleryDescription>
             </DescriptionContainer>
-          </Link>
-        </GalleryItem>
+          </GalleryItem>{' '}
+        </Link>
       ))}
     </GalleryCard>
-   
   );
 };
 
