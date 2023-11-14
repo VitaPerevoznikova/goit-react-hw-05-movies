@@ -8,13 +8,12 @@ import {
   StyledNavLink,
 } from './Layout.style';
 import Loader from 'components/Loader/Loader';
-// import Footer from 'components/Footer/Footer';
+import Footer from 'components/Footer/Footer';
 
-
-const Layout = ({children}) => {
+const Layout = ({ children }) => {
   return (
     <Container>
-      <StyledHeader> 
+      <StyledHeader>
         <StyledList>
           <StyledItem>
             <StyledNavLink to="/">Home</StyledNavLink>
@@ -24,17 +23,14 @@ const Layout = ({children}) => {
           </StyledItem>
         </StyledList>
       </StyledHeader>
-       <main>
-        <Suspense fallback={<Loader/>}>
-        <Outlet />
-      </Suspense>
+      <main>
+        <Suspense fallback={<Loader />}>
+          <Outlet />
+        </Suspense>
         {children}
-       </main>
-       {/* <footer>
-         <Footer/>
-       </footer> */}
-      
-      
+      </main>
+
+      <Footer />
     </Container>
   );
 };

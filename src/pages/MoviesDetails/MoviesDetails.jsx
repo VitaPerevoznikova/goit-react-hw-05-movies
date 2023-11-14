@@ -63,9 +63,11 @@ const MoviesDetails = () => {
           <FilmSubTitle>
             Rating: {Math.round(movie.vote_average * 100) / 100}
           </FilmSubTitle>
-          <FilmSubTitle>Overview</FilmSubTitle>
+          <FilmSubTitle>Overview:</FilmSubTitle>
           <FilmDescription>{movie.overview}</FilmDescription>
           <StyledListDescr>
+          <FilmSubTitle> Genre:</FilmSubTitle>
+         
             {movie.genres?.map(genre => (
               <li key={genre.id}>{genre.name}</li>
             ))}
