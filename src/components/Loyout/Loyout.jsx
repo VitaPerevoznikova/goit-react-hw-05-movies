@@ -9,6 +9,8 @@ import {
 } from './Layout.style';
 import Loader from 'components/Loader/Loader';
 import Footer from 'components/Footer/Footer';
+import BtnUp from 'components/BtnUp/BtnUp';
+
 
 const Layout = ({ children }) => {
   return (
@@ -28,8 +30,8 @@ const Layout = ({ children }) => {
           <Outlet />
         </Suspense>
         {children}
+        <BtnUp/>
       </main>
-
       <Footer />
     </Container>
   );
